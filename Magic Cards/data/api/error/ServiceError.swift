@@ -9,7 +9,7 @@ import Foundation
 // Manage HTTP request API errors.
 class ServiceError: Error {
     var message: String
-    init(message: String = "Generic Error") {
+    init(message: String = "Ops!!! something went wrong") {
         self.message = message
     }
 }

@@ -9,4 +9,5 @@ import Foundation
 
 protocol CardListPresenterToRouterProtocol: AnyObject {
     func navigateToCardDetails(card: CardVO)
+    func showErrorAlert(message: String)
 }

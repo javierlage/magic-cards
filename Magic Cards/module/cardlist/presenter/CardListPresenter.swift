@@ -65,6 +65,6 @@ extension CardListPresenter: CardListInteractorToPresenterProtocol {
 
     func onCardListFailure(error: ServiceError) {
         view?.showActivityIndicator(false)
-        view?.showErrorAlert(message: error.message)
+        router?.showErrorAlert(message: error.message)
     }
 }

@@ -10,5 +10,4 @@ import Foundation
 protocol CardListPresenterToViewProtocol: AnyObject {
     func showActivityIndicator(_ isVisible: Bool)
     func onCardsLoaded()
-    func showErrorAlert(message: String)
 }

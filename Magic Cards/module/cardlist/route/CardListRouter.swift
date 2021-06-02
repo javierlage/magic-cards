@@ -38,4 +38,9 @@ extension CardListRouter: CardListPresenterToRouterProtocol {
         CardListRouter.mNavigationController?.pushViewController(cardDetailModule, animated: true)
     }
     
+    func showErrorAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Accept", style: .cancel, handler: nil))
+        CardListRouter.mNavigationController?.present(alert, animated: true, completion: nil)
+    }
 }

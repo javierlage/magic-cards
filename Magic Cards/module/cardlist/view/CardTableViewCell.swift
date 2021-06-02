@@ -26,7 +26,7 @@ class CardTableViewCell: UITableViewCell {
     }
 
     func bind(item: CardVO, tapGesture: UITapGestureRecognizer, actionTag: Int) {
-        if let imageUrl = item.imageUrl {
+        if let imageUrl = item.imageUrl, !imageUrl.isEmpty {
             mCardImageView.kf.setImage(with: URL(string: imageUrl))
         }
         mNameLabel.text = item.name

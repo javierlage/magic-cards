@@ -65,6 +65,8 @@
 		7F0E20FE2666F116005E63D9 /* CardDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E20FD2666F116005E63D9 /* CardDao.swift */; };
 		7F0E21002666F155005E63D9 /* BaseDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E20FF2666F155005E63D9 /* BaseDao.swift */; };
 		7F0E21032666F25E005E63D9 /* CardCoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E21022666F25E005E63D9 /* CardCoreDataRepository.swift */; };
+		7F0E210626672766005E63D9 /* CardListRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E210526672766005E63D9 /* CardListRouterTests.swift */; };
+		7F0E21092667324E005E63D9 /* CardEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E21082667324E005E63D9 /* CardEntityTests.swift */; };
 		DF38593BAA445E68C6440F5D /* Pods_Magic_Cards_Magic_CardsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD4EF18C6A99F27327AC935 /* Pods_Magic_Cards_Magic_CardsUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -153,6 +155,8 @@
 		7F0E20FD2666F116005E63D9 /* CardDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDao.swift; sourceTree = "<group>"; };
 		7F0E20FF2666F155005E63D9 /* BaseDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDao.swift; sourceTree = "<group>"; };
 		7F0E21022666F25E005E63D9 /* CardCoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCoreDataRepository.swift; sourceTree = "<group>"; };
+		7F0E210526672766005E63D9 /* CardListRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListRouterTests.swift; sourceTree = "<group>"; };
+		7F0E21082667324E005E63D9 /* CardEntityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntityTests.swift; sourceTree = "<group>"; };
 		AAD4EF18C6A99F27327AC935 /* Pods_Magic_Cards_Magic_CardsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Magic_Cards_Magic_CardsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC71E6726FCA210F970BD0A7 /* Pods_Magic_CardsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Magic_CardsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E77E3D6C6225A6A8548EA072 /* Pods-Magic CardsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic CardsTests.release.xcconfig"; path = "Target Support Files/Pods-Magic CardsTests/Pods-Magic CardsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -238,6 +242,8 @@
 		7F0E205D2666A515005E63D9 /* Magic CardsTests */ = {
 			isa = PBXGroup;
 			children = (
+				7F0E21072667323A005E63D9 /* EntityTest */,
+				7F0E210426672713005E63D9 /* CardListTest */,
 				7F0E205E2666A515005E63D9 /* Magic_CardsTests.swift */,
 				7F0E20602666A515005E63D9 /* Info.plist */,
 			);
@@ -611,6 +617,22 @@
 			path = coredata;
 			sourceTree = "<group>";
 		};
+		7F0E210426672713005E63D9 /* CardListTest */ = {
+			isa = PBXGroup;
+			children = (
+				7F0E210526672766005E63D9 /* CardListRouterTests.swift */,
+			);
+			path = CardListTest;
+			sourceTree = "<group>";
+		};
+		7F0E21072667323A005E63D9 /* EntityTest */ = {
+			isa = PBXGroup;
+			children = (
+				7F0E21082667324E005E63D9 /* CardEntityTests.swift */,
+			);
+			path = EntityTest;
+			sourceTree = "<group>";
+		};
 		842BE0BB368CA721A094ADE4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -921,6 +943,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F0E205F2666A515005E63D9 /* Magic_CardsTests.swift in Sources */,
+				7F0E210626672766005E63D9 /* CardListRouterTests.swift in Sources */,
+				7F0E21092667324E005E63D9 /* CardEntityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

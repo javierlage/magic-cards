@@ -16,7 +16,7 @@ class CardDao: BaseDao {
         let managedContext = CoreDataManager.sharedManager.persistentContainer.viewContext
         if let entity = CardEntity.create(managedContext) {
             entity.name = cardVO.name ?? ""
-            entity.text = cardVO.originalText ?? ""
+            entity.text = cardVO.text ?? ""
             entity.image = cardVO.imageUrl ?? ""
             entity.rarity = cardVO.rarity ?? ""
             do {
@@ -32,5 +32,11 @@ class CardDao: BaseDao {
             return entities as? [CardEntity]
         }
         return nil
+    }
+    
+    func deleteAll() {
+        if let toDelete = findAll() {
+            deleteAllRecords(toDelete)
+        }
     }
 }

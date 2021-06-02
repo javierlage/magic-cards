@@ -27,7 +27,7 @@ class CardTableViewCell: UITableViewCell {
 
     func bind(item: CardVO, tapGesture: UITapGestureRecognizer, actionTag: Int) {
         if let imageUrl = item.imageUrl, !imageUrl.isEmpty {
-            mCardImageView.kf.setImage(with: URL(string: imageUrl))
+            mCardImageView.kf.setImage(with: URL(string: imageUrl), placeholder: UIImage(named: "default"))
         }
         mNameLabel.text = item.name
         mRarityLabel.text = item.rarity

@@ -10,7 +10,7 @@ import UIKit
 class CardDetailRouter {
     // MARK: - Common functions
 
-    class func createModule(card: CardVO) -> UIViewController {
+    class func createModule(with card: CardVO) -> UIViewController {
         let storyboard = UIStoryboard(name: "CardDetail", bundle: Bundle.main)
         if let view = storyboard.instantiateViewController(withIdentifier: "CardDetailID") as? CardDetailViewController {
             let presenter: CardDetailViewToPresenterProtocol & CardDetailInteractorToPresenterProtocol = CardDetailPresenter()

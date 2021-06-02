@@ -25,7 +25,7 @@ class CardDetailViewController: UIViewController {
 
     private func initUI() {
         navigationItem.title = presenter?.getCardName()
-        if let imageUrl = presenter?.getCardImage() {
+        if let imageUrl = presenter?.getCardImage(), !imageUrl.isEmpty {
             mCardImageView.kf.setImage(with: URL(string: imageUrl))
         }
         mCardDescriptionLabel.text = presenter?.getCardOriginalText()

@@ -20,14 +20,14 @@ class CardCoreDataRepository {
         var result = [CardVO]()
         if let cardEntities = cardDao.findAll() {
             result = cardEntities.map({ (entity) -> CardVO in
-                let card = CardVO()
-                card.name = entity.name
-                card.originalText = entity.text
-                card.imageUrl = entity.image
-                card.rarity = entity.rarity
-                return card
+                CardVO(name: entity.name, imageUrl: entity.image, text: entity.text, rarity: entity.rarity)
             })
         }
         return result
     }
+    
+    static func deleteAll() {
+        self.cardDao.deleteAll()
+    }
+    
 }

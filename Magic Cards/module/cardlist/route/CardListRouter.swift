@@ -34,10 +34,10 @@ class CardListRouter: BaseRouter {
 
 extension CardListRouter: CardListPresenterToRouterProtocol {
     func navigateToCardDetails(card: CardVO) {
-        let cardDetailModule = CardDetailRouter.createModule(card: card)
+        let cardDetailModule = CardDetailRouter.createModule(with: card)
         CardListRouter.mNavigationController?.pushViewController(cardDetailModule, animated: true)
     }
-    
+
     func showErrorAlert(message: String) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Accept", style: .cancel, handler: nil))

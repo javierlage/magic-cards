@@ -15,6 +15,7 @@ class CardListPresenter {
     var router: CardListPresenterToRouterProtocol?
 
     private var mCardList = [CardVO]()
+    private var mIsRefreshing = false
 
     private func notifyUI() {
         view?.onCardsLoaded()
@@ -47,13 +48,20 @@ extension CardListPresenter: CardListViewToPresenterProtocol {
         let selectedCard = mCardList[index]
         router?.navigateToCardDetails(card: selectedCard)
     }
+
+    func onRefreshCards() {
+        mIsRefreshing = true
+        interactor?.getMagicCards()
+    }
 }
 
 // MARK: - CardListInteractorToPresenterProtocol
 
 extension CardListPresenter: CardListInteractorToPresenterProtocol {
     func showProgressIndicator(_ isVisible: Bool) {
-        view?.showActivityIndicator(isVisible)
+        if !mIsRefreshing {
+            view?.showActivityIndicator(isVisible)
+        }
     }
 
     func onCardListResponse(cards: [CardVO]?) {

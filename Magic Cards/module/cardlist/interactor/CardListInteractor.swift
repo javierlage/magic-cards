@@ -20,6 +20,7 @@ class CardListInteractor: CardListServiceDelegate {
 
     func onCardListResponse(data: [CardVO]?) {
         if let cards = data {
+            CardCoreDataRepository.deleteAll()
             CardCoreDataRepository.saveCards(cards: cards)
         }
         presenter?.onCardListResponse(cards: data)
@@ -36,7 +37,7 @@ extension CardListInteractor: CardListPresenterToInteractorProtocol {
     func getMagicCards() {
         CardRepository.getCardList(listener: self)
     }
-    
+
     func getCardsFromDB() -> [CardVO]? {
         return CardCoreDataRepository.retrieveCards()
     }

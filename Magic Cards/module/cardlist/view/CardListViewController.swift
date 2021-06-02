@@ -13,6 +13,8 @@ class CardListViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet var mCardsTableView: UITableView!
     @IBOutlet var mLoadingActivityIndicator: UIActivityIndicatorView!
 
+    private let mRefreshControl = UIRefreshControl()
+
     var presenter: CardListViewToPresenterProtocol?
 
     override func viewDidLoad() {
@@ -26,7 +28,14 @@ class CardListViewController: UIViewController, UITableViewDataSource, UITableVi
     private func initUI() {
         mCardsTableView.delegate = self
         mCardsTableView.dataSource = self
+        // Configure Refresh Control
+        mCardsTableView.addSubview(mRefreshControl)
+        mRefreshControl.addTarget(self, action: #selector(onRefresh(_:)), for: .valueChanged)
         presenter?.initUI()
+    }
+    
+    @objc private func onRefresh(_ sender: Any) {
+        presenter?.onRefreshCards()
     }
 
     @IBAction func onCardClicked(_ sender: AnyObject) {
@@ -63,6 +72,7 @@ class CardListViewController: UIViewController, UITableViewDataSource, UITableVi
 extension CardListViewController: CardListPresenterToViewProtocol {
     func onCardsLoaded() {
         mCardsTableView.reloadData()
+        mRefreshControl.endRefreshing()
     }
 
     func showActivityIndicator(_ isVisible: Bool) {

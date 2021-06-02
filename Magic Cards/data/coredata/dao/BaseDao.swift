@@ -25,4 +25,26 @@ class BaseDao {
             return nil
         }
     }
+    
+    func deleteAllRecords(_ toDelete: [NSManagedObject]) {
+        /* Before you can do anything with Core Data, you need a managed object context. */
+        let managedContext = CoreDataManager.sharedManager.persistentContainer.viewContext
+        do {
+            var count = 1
+            for i in toDelete {
+                /* call delete method(aManagedObjectInstance) */
+                /* here i is managed object instance */
+                managedContext.delete(i)
+                /* finally save the contexts */
+                try managedContext.save()
+                /* update your array also */
+                print("Deleted \(count) records")
+                count = count + 1
+            }
+
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+    }
+
 }

@@ -16,4 +16,5 @@ protocol CardListViewToPresenterProtocol: AnyObject {
     func getCardsCount() -> Int
     func getCardAt(index: Int) -> CardVO
     func onCardClickedAt(index: Int)
+    func onRefreshCards()
 }

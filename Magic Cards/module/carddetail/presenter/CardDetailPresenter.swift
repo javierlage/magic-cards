@@ -21,7 +21,7 @@ class CardDetailPresenter {
 
 extension CardDetailPresenter: CardDetailViewToPresenterProtocol {
     func getCardOriginalText() -> String {
-        return mCard.originalText ?? ""
+        return mCard.text ?? ""
     }
 
     func getCardName() -> String {
